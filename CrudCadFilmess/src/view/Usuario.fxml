@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControleUsuario">
+   <children>
+      <Pane layoutX="-90.0" layoutY="-215.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: grey;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Cadastrar/Pesquisar">
+                  <items>
+                    <MenuItem fx:id="MenuItemFilme" mnemonicParsing="false" onAction="#MenuItemFilmeOnAction" text="Filme" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="MenuItemGenero" mnemonicParsing="false" onAction="#MenuItemGeneroOnAction" text="Genero" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="MenuItemArtista" mnemonicParsing="false" onAction="#MenuItemArtistaOnAction" text="Artista" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Relatorios">
+                  <items>
+                    <MenuItem fx:id="MenuItemGerarRelatorio" mnemonicParsing="false" onAction="#MenuItemGerarRelatorioOnAction" text="GerarRelatorios" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Usuario">
+                    <items>
+                      <MenuItem fx:id="MenuItemUsuario" mnemonicParsing="false" onAction="#MenuItemUsuarioOnAction" text="Cadastrar/Pesquisar" />
+                    </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <Label fx:id="LblMsg" layoutX="7.0" layoutY="378.0" />
+            <TabPane layoutY="25.0" prefHeight="375.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Cadastrar">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="267.0" prefWidth="463.0">
+                           <children>
+                              <Label fx:id="LblNome" layoutX="123.0" layoutY="62.0" text="Nome:" />
+                              <Label fx:id="LblLogin" layoutX="125.0" layoutY="102.0" text="Login:" />
+                              <Label fx:id="LblSenha" layoutX="124.0" layoutY="146.0" text="Senha:" />
+                              <ComboBox fx:id="ComboBoxTipo" layoutX="175.0" layoutY="184.0" prefHeight="25.0" prefWidth="299.0" />
+                              <Label fx:id="LblTipo" layoutX="125.0" layoutY="188.0" text="Tipo:" />
+                              <TextField fx:id="TxtFieldNome" layoutX="175.0" layoutY="58.0" prefHeight="25.0" prefWidth="299.0" />
+                              <TextField fx:id="TxtFieldLogin" layoutX="175.0" layoutY="98.0" prefHeight="25.0" prefWidth="299.0" />
+                              <PasswordField fx:id="PassFieldSenha" layoutX="176.0" layoutY="142.0" prefHeight="25.0" prefWidth="299.0" />
+                              <Button fx:id="BtnAlterar" layoutX="14.0" layoutY="307.0" mnemonicParsing="false" onAction="#BtnAlterarOnAction" text="Alterar" />
+                              <Button fx:id="BtnInserir" layoutX="174.0" layoutY="307.0" mnemonicParsing="false" onAction="#BtnInserirOnAction" prefHeight="25.0" prefWidth="253.0" text="Inserir" />
+                              <Button fx:id="BtnDeletar" layoutX="534.0" layoutY="307.0" mnemonicParsing="false" onAction="#BtnDeletarOnAction" text="Deletar" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Pesquisar">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="BtnAlterarP" layoutX="14.0" layoutY="307.0" mnemonicParsing="false" onAction="#BtnAlterarPOnAction" text="Alterar" />
+                              <Button fx:id="BtnPesquisarP" layoutX="166.0" layoutY="307.0" mnemonicParsing="false" onAction="#BtnPesquisarPOnAction" prefHeight="25.0" prefWidth="269.0" text="Pesquisar" />
+                              <Button fx:id="BtnExcluirP" layoutX="534.0" layoutY="307.0" mnemonicParsing="false" onAction="#BtnExcluirPOnAction" text="Excluir" />
+                              <ComboBox fx:id="ComboBoxUsuario" layoutX="8.0" layoutY="14.0" prefHeight="25.0" prefWidth="163.0" />
+                              <TextField fx:id="TxtFieldUsuario" layoutX="177.0" layoutY="14.0" prefHeight="25.0" prefWidth="418.0" />
+                              <ScrollPane layoutX="-1.0" layoutY="42.0" prefHeight="258.0" prefWidth="600.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="258.0" prefWidth="598.0">
+                                       <children>
+                                          <TableView fx:id="TVUsuario" prefHeight="258.0" prefWidth="600.0">
+                                            <columns>
+                                              <TableColumn fx:id="TCNome" prefWidth="197.0" text="Nome" />
+                                              <TableColumn fx:id="TCLogin" minWidth="0.0" prefWidth="138.0" text="Login" />
+                                                <TableColumn fx:id="TCSenha" prefWidth="141.0" text="Senha" />
+                                                <TableColumn fx:id="TCTipo" prefWidth="108.0" text="Tipo" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControleMenu">
+   <children>
+      <Pane layoutX="-90.0" layoutY="-215.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: grey;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Cadastrar/Pesquisar">
+                  <items>
+                    <MenuItem fx:id="MenuItemFilme" mnemonicParsing="false" onAction="#MenuItemFilmeOnAction" text="Filme" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="MenuItemGenero" mnemonicParsing="false" onAction="#MenuItemGeneroOnAction" text="Genero" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="MenuItemArtista" mnemonicParsing="false" onAction="#MenuItemArtistaOnAction" text="Artista" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Relatorios">
+                  <items>
+                    <MenuItem fx:id="MenuItemGerarRelatorio" mnemonicParsing="false" onAction="#MenuItemGerarRelatorioOnAction" text="GerarRelatorios" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Usuario">
+                    <items>
+                      <MenuItem fx:id="MenuItemUsuario" mnemonicParsing="false" onAction="#MenuItemUsuarioOnAction" text="Cadastrar/Pesquisar" />
+                    </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <Label fx:id="LblMsg" layoutX="7.0" layoutY="378.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

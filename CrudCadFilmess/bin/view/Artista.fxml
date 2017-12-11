@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControleArtista">
+   <children>
+      <Pane layoutX="-90.0" layoutY="-215.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: grey;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Cadastrar/Pesquisar">
+                  <items>
+                    <MenuItem fx:id="MenuItemFilme" mnemonicParsing="false" onAction="#MenuItemFilmeOnAction" text="Filme" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="MenuItemGenero" mnemonicParsing="false" onAction="#MenuItemGeneroOnAction" text="Genero" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="MenuItemArtista" mnemonicParsing="false" onAction="#MenuItemArtistaOnAction" text="Artista" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Relatorios">
+                  <items>
+                    <MenuItem fx:id="MenuItemGerarRelatorio" mnemonicParsing="false" onAction="#MenuItemGerarRelatorioOnAction" text="GerarRelatorios" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Usuario">
+                    <items>
+                      <MenuItem fx:id="MenuItemUsuario" mnemonicParsing="false" onAction="#MenuItemUsuarioOnAction" text="Cadastrar/Pesquisar" />
+                    </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <Label fx:id="LblMsg" layoutX="7.0" layoutY="378.0" />
+            <TabPane layoutY="27.0" prefHeight="373.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Cadastrar">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="604.0">
+                           <children>
+                              <TextField fx:id="TxtFieldNome" layoutX="51.0" layoutY="14.0" prefHeight="25.0" prefWidth="547.0" />
+                              <Label fx:id="LblNome" layoutX="14.0" layoutY="18.0" text="Nome:" />
+                              <Button fx:id="BtnInserir" layoutX="182.0" layoutY="299.0" mnemonicParsing="false" onAction="#BtnInserirOnAction" prefHeight="25.0" prefWidth="237.0" text="Inserir" />
+                              <Button fx:id="BtnAlterar" layoutX="14.0" layoutY="299.0" mnemonicParsing="false" onAction="#BtnAlterarOnAction" text="Alterar" />
+                              <Button fx:id="BtnExcluir" layoutX="534.0" layoutY="299.0" mnemonicParsing="false" onAction="#BtnExcluirOnAction" text="Excluir" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Pesquisar">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="LblNomeP" layoutX="14.0" layoutY="14.0" text="Nome:" />
+                              <TextField fx:id="TxtFieldNomeP" layoutX="54.0" layoutY="10.0" prefHeight="25.0" prefWidth="543.0" />
+                              <Button fx:id="BtnAlterarP" layoutX="6.0" layoutY="312.0" mnemonicParsing="false" onAction="#BtnAlterarPOnAction" text="Alterar" />
+                              <Button fx:id="BtnPesquisarP" layoutX="174.0" layoutY="312.0" mnemonicParsing="false" onAction="#BtnPesquisarPOnAction" prefHeight="25.0" prefWidth="251.0" text="Pesquisar" />
+                              <Button fx:id="BtnDeletarP" layoutX="534.0" layoutY="312.0" mnemonicParsing="false" onAction="#BtnDeletarPOnAction" text="Deletar" />
+                              <ScrollPane layoutX="-1.0" layoutY="43.0" prefHeight="267.0" prefWidth="600.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="269.0" prefWidth="592.0">
+                                       <children>
+                                          <TableView fx:id="TVArtista" prefHeight="268.0" prefWidth="600.0">
+                                            <columns>
+                                              <TableColumn fx:id="TCArtista" prefWidth="585.0" text="Artista" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
